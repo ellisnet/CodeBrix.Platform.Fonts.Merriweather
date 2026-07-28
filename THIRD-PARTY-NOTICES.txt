@@ -1,0 +1,224 @@
+THIRD-PARTY SOFTWARE NOTICES AND INFORMATION
+
+CodeBrix.Platform.Fonts.Merriweather is a CodeBrix-family redistribution of the
+Merriweather font family, packaged as a .NET 10 NuGet library. Merriweather
+covers the Latin and Cyrillic scripts but not Greek, Armenian or Georgian, so
+this package additionally bundles three Noto Serif companion families that
+supply those scripts. The package therefore incorporates four pieces of
+third-party material:
+
+  1. The Merriweather font family (SIL OFL 1.1) — the primary text face.
+  2. The Noto Serif font family (SIL OFL 1.1) — the Greek companion.
+  3. The Noto Serif Armenian font family (SIL OFL 1.1) — the Armenian companion.
+  4. The Noto Serif Georgian font family (SIL OFL 1.1) — the Georgian companion.
+
+The CodeBrix-authored parts of this package — the `.csproj`, the
+buildTransitive `.targets` file, the `.ttf.manifest` JSON files, the
+`CODEBRIX-DEVELOP.json` descriptor, the `.uprimarker` marker, the
+documentation, and the packaging metadata — are original to the CodeBrix family
+and contain no third-party source code. They are released, together with the
+bundled font files, under the SIL Open Font License, Version 1.1, the same
+license as the fonts. The full license text is bundled with this repository as
+`OFL.txt` at the repository root and is also packaged inside the produced NuGet
+under the same name.
+
+================================================================================
+
+1. Merriweather Font Family
+   ------------------------
+   Project URL:    https://github.com/EbenSorkin/Merriweather4
+   Designer:       Eben Sorkin
+   Copyright:      Copyright 2020 The Merriweather Project Authors
+                   (https://github.com/EbenSorkin/Merriweather4) with Reserved
+                   Font Name "Merriweather".
+   License:        SIL Open Font License, Version 1.1
+
+   Note on naming: unlike some other families redistributed in the CodeBrix
+   font packages, the Merriweather copyright statement DOES declare a Reserved
+   Font Name ("Merriweather"), so SIL OFL 1.1 condition 3 applies. This package
+   complies: the `.ttf` files are redistributed bit-for-bit unmodified, and the
+   name tables inside them are untouched, so no Modified Version bearing the
+   Reserved Font Name is created or distributed. The redistribution renames
+   FILES only (see "Modifications made during redistribution" below), which
+   does not alter the font name recorded inside the font.
+
+   Files redistributed from this upstream project (binary `.ttf` files):
+
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather-Bold.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather-BoldItalic.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather-ExtraBold.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather-ExtraBoldItalic.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather-Italic.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather-Light.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather-LightItalic.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather-Medium.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather-MediumItalic.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather-Regular.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather-SemiBold.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather-SemiBoldItalic.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather_SemiCondensed-Bold.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather_SemiCondensed-BoldItalic.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather_SemiCondensed-ExtraBold.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather_SemiCondensed-ExtraBoldItalic.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather_SemiCondensed-Italic.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather_SemiCondensed-Light.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather_SemiCondensed-LightItalic.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather_SemiCondensed-Medium.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather_SemiCondensed-MediumItalic.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather_SemiCondensed-Regular.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather_SemiCondensed-SemiBold.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather_SemiCondensed-SemiBoldItalic.ttf
+
+   Modifications made during redistribution:
+     - Only the six weights Light (300), Regular (400), Medium (500),
+       SemiBold (600), Bold (700), and ExtraBold (800) are shipped as static
+       instances; the upstream Black (900) static instances are not included.
+       (That weight remains reachable through the bundled variable font.)
+       Merriweather publishes no Thin or ExtraLight static instances upstream.
+     - Only the 24pt optical size is shipped as static instances. Merriweather
+       publishes five optical sizes (24, 36, 48, 96 and 120 pt), but the
+       CodeBrix font-manifest schema addresses fonts by style, weight and
+       stretch only and has no optical-size dimension, so a single optical size
+       is shipped. 24pt was chosen as the closest static to the variable font's
+       own `opsz` default of 18. The upstream `_24pt` filename token is stripped
+       so the filenames match the convention used across the CodeBrix font
+       packages. No `.ttf` binary content was altered.
+     - The upstream upright variable font
+       `Merriweather-VariableFont_opsz,wdth,wght.ttf` was renamed to
+       `Merriweather.ttf`. No `.ttf` binary content was altered.
+     - The separate upstream italic variable font
+       `Merriweather-Italic-VariableFont_opsz,wdth,wght.ttf` is not included;
+       italic styles are provided through the static instances.
+
+   The full SIL Open Font License Version 1.1 text is reproduced in
+   `OFL.txt` at the root of this repository, and is also packaged inside
+   the produced NuGet under the same name.
+
+================================================================================
+
+2. Noto Serif Font Family (Greek companion)
+   ----------------------------------------
+   Project URL:    https://github.com/notofonts/latin-greek-cyrillic
+   Copyright:      Copyright 2022 The Noto Project Authors
+                   (https://github.com/notofonts/latin-greek-cyrillic)
+   License:        SIL Open Font License, Version 1.1
+
+   Note on naming: the Noto Serif copyright statement declares NO Reserved Font
+   Name, so SIL OFL 1.1 condition 3 does not apply to this family. The `.ttf`
+   files are redistributed bit-for-bit unmodified.
+
+   Why it is bundled: Merriweather does not cover the Greek script. Noto Serif
+   supplies it, in a serif design consistent with Merriweather.
+
+   Files redistributed from this upstream project (binary `.ttf` files):
+
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerif.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerif-Bold.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerif-BoldItalic.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerif-ExtraBold.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerif-ExtraBoldItalic.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerif-Italic.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerif-Light.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerif-LightItalic.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerif-Medium.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerif-MediumItalic.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerif-Regular.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerif-SemiBold.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerif-SemiBoldItalic.ttf
+
+   Modifications made during redistribution:
+     - Only the six weights Light (300) through ExtraBold (800) are shipped as
+       static instances, in the Normal stretch, upright and italic.
+     - The upstream upright variable font `NotoSerif-VariableFont_wdth,wght.ttf`
+       was renamed to `NotoSerif.ttf`. No `.ttf` binary content was altered.
+
+================================================================================
+
+3. Noto Serif Armenian Font Family (Armenian companion)
+   ----------------------------------------------------
+   Project URL:    https://github.com/notofonts/armenian
+   Copyright:      Copyright 2022 The Noto Project Authors
+                   (https://github.com/notofonts/armenian)
+   License:        SIL Open Font License, Version 1.1
+
+   Note on naming: the Noto Serif Armenian copyright statement declares NO
+   Reserved Font Name, so SIL OFL 1.1 condition 3 does not apply to this
+   family. The `.ttf` files are redistributed bit-for-bit unmodified.
+
+   Why it is bundled: Merriweather does not cover the Armenian script.
+
+   Files redistributed from this upstream project (binary `.ttf` files):
+
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerifArmenian.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerifArmenian-Bold.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerifArmenian-ExtraBold.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerifArmenian-Light.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerifArmenian-Medium.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerifArmenian-Regular.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerifArmenian-SemiBold.ttf
+
+   Modifications made during redistribution:
+     - Only the six weights Light (300) through ExtraBold (800) are shipped as
+       static instances, in the Normal stretch. Upstream publishes no italic
+       face for this family, so italic Armenian text renders upright.
+     - The upstream upright variable font
+       `NotoSerifArmenian-VariableFont_wdth,wght.ttf` was renamed to
+       `NotoSerifArmenian.ttf`. No `.ttf` binary content was altered.
+
+================================================================================
+
+4. Noto Serif Georgian Font Family (Georgian companion)
+   ----------------------------------------------------
+   Project URL:    https://github.com/notofonts/georgian
+   Copyright:      Copyright 2022 The Noto Project Authors
+                   (https://github.com/notofonts/georgian)
+   License:        SIL Open Font License, Version 1.1
+
+   Note on naming: the Noto Serif Georgian copyright statement declares NO
+   Reserved Font Name, so SIL OFL 1.1 condition 3 does not apply to this
+   family. The `.ttf` files are redistributed bit-for-bit unmodified.
+
+   Why it is bundled: Merriweather does not cover the Georgian script.
+
+   Files redistributed from this upstream project (binary `.ttf` files):
+
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerifGeorgian.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerifGeorgian-Bold.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerifGeorgian-ExtraBold.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerifGeorgian-Light.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerifGeorgian-Medium.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerifGeorgian-Regular.ttf
+     - src/CodeBrix.Platform.Fonts.Merriweather/Fonts/NotoSerifGeorgian-SemiBold.ttf
+
+   Modifications made during redistribution:
+     - Only the six weights Light (300) through ExtraBold (800) are shipped as
+       static instances, in the Normal stretch. Upstream publishes no italic
+       face for this family, so italic Georgian text renders upright.
+     - The upstream upright variable font
+       `NotoSerifGeorgian-VariableFont_wdth,wght.ttf` was renamed to
+       `NotoSerifGeorgian.ttf`. No `.ttf` binary content was altered.
+
+================================================================================
+
+License statement
+-----------------
+
+The combined work is published under the SPDX expression `OFL-1.1`. SIL OFL
+1.1 is a permissive font license that explicitly allows fonts to be bundled
+and redistributed alongside any other software (condition 2). The
+CodeBrix-authored wrapper, build logic, and packaging metadata are released
+under the same SIL OFL 1.1 as the bundled font files.
+
+Jeremy Ellis and contributors license the CodeBrix.Platform.Fonts.Merriweather
+project to you under the terms set forth in the LICENSE / OFL.txt file (SIL
+OFL 1.1), located at the root of this repository.
+
+If you have any questions about any third-party code or assets referenced
+here, or if you believe that any third-party material has been included in
+CodeBrix.Platform.Fonts.Merriweather in error, please open a new issue at:
+https://github.com/ellisnet/CodeBrix.Platform.Fonts.Merriweather/issues
+
+================================================================================
+
+END OF THIRD-PARTY SOFTWARE NOTICES AND INFORMATION

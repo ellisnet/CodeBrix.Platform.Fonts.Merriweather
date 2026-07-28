@@ -1,0 +1,35 @@
+<Project>
+    <!--
+      Prunes the redundant static Merriweather (and companion) fonts at consumer
+      build time, hooking into the CodeBrix.Platform asset pipeline.
+
+      This target hooks AfterTargets="_CodeBrixAddLibraryAssets" (the asset
+      target defined by the CodeBrix.Platform UI build tasks). Hooking that
+      target is what makes this prune actually run during a CodeBrix.Platform
+      app build.
+
+      Behaviour:
+        * On platforms that do NOT support the font manifest, the static font
+          files (their names contain a dash) are removed, leaving only the
+          variable fonts Merriweather.ttf, NotoSerif.ttf, NotoSerifArmenian.ttf
+          and NotoSerifGeorgian.ttf.
+        * Those four variable fonts are intentionally NEVER removed. Consumers
+          (and the CodeBrix.Platform default-font configuration) reference them
+          by direct paths such as
+          ms-appx:///CodeBrix.Platform.Fonts.Merriweather/Fonts/Merriweather.ttf,
+          so they must stay present on every platform (including manifest-capable
+          ones) for those references to resolve. The companion fonts are named
+          without a dash for exactly this reason: they are the fallback families
+          that supply the Greek, Armenian and Georgian scripts Merriweather does
+          not carry, and losing them would silently drop those scripts.
+    -->
+    <Target Name="CodeBrixRemoveUnusedMerriweather" AfterTargets="_CodeBrixAddLibraryAssets">
+        <ItemGroup>
+            <!-- Static font files contain a dash in the name, so that's what we remove. -->
+            <!-- For platforms that already support variable fonts, we remove the static font files. -->
+            <_AllChildProjectItemsWithTargetPath
+                Remove="$(MSBuildThisFileDirectory)..\..\lib\net10.0\CodeBrix.Platform.Fonts.Merriweather\Fonts\**-**.ttf"
+                Condition="'$(SupportsFontManifest)'!='true'" />
+        </ItemGroup>
+    </Target>
+</Project>

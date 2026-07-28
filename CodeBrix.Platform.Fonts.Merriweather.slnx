@@ -1,0 +1,18 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="AGENT-README.txt" />
+    <File Path="CODEBRIX-DEVELOP.json" />
+    <File Path="icon-codebrix-128.png" />
+    <File Path="LICENSE" />
+    <File Path="OFL.txt" />
+    <File Path="README.md" />
+    <File Path="THIRD-PARTY-NOTICES.txt" />
+  </Folder>
+  <Folder Name="/Solution Items/src/">
+    <File Path="src/CodeBrix.Platform.Fonts.Merriweather/buildTransitive/net10.0/CodeBrix.Platform.Fonts.Merriweather.OflLicenseForever.targets" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="tests/CodeBrix.Platform.Fonts.Merriweather.Tests/CodeBrix.Platform.Fonts.Merriweather.Tests.csproj" />
+  </Folder>
+  <Project Path="src/CodeBrix.Platform.Fonts.Merriweather/CodeBrix.Platform.Fonts.Merriweather.csproj" />
+</Solution>
