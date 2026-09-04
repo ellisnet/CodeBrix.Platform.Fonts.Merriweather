@@ -1,13 +1,26 @@
 # CodeBrix.Platform.Fonts.Merriweather
 
 A redistribution of the Merriweather font family packaged as a CodeBrix-family NuGet library for .NET 10 applications.
-CodeBrix.Platform.Fonts.Merriweather is a content-files font package for CodeBrix.Platform-forked applications — supplying the Merriweather variable font and its static instances as build-time assets — and is equally usable as a plain content-files NuGet in any .NET 10 project that wants the Merriweather font set.
+CodeBrix.Platform.Fonts.Merriweather is a content-files font package for CodeBrix.Platform applications — supplying the Merriweather variable font and its static instances as build-time assets — and is equally usable as a plain content-files NuGet in any .NET 10 project that wants the Merriweather font set.
 Merriweather covers the Latin and Cyrillic scripts but not Greek, Armenian or Georgian, so this package also bundles three Noto Serif companion families that supply those scripts in a matching serif design.
 The library has no managed dependencies other than .NET, and is provided as a .NET 10 library and associated `CodeBrix.Platform.Fonts.Merriweather.OflLicenseForever` NuGet package.
 
 CodeBrix.Platform.Fonts.Merriweather supports applications and assemblies that target Microsoft .NET version 10.0 and later.
 Microsoft .NET version 10.0 is a Long-Term Supported (LTS) version of .NET, and was released on Nov 11, 2025; and will be actively supported by Microsoft until Nov 14, 2028.
 Please update your C#/.NET code and projects to the latest LTS version of Microsoft .NET.
+
+## Installation
+
+```
+dotnet add package CodeBrix.Platform.Fonts.Merriweather.OflLicenseForever
+```
+
+Note that the NuGet package ID and the assembly name are different - there is no package named plain `CodeBrix.Platform.Fonts.Merriweather`:
+
+* NuGet package ID: `CodeBrix.Platform.Fonts.Merriweather.OflLicenseForever`
+* Assembly and content-folder name: `CodeBrix.Platform.Fonts.Merriweather` - the name that the `ms-appx:///CodeBrix.Platform.Fonts.Merriweather/Fonts/...` URIs shown below resolve against.
+
+The assembly carries no managed API and nothing to `using` - everything a consumer uses is a font file path or an MSBuild property. The package has no dependencies beyond .NET itself.
 
 ## CodeBrix.Platform.Fonts.Merriweather supports:
 
@@ -49,12 +62,25 @@ Note that the font URI carries no `#FamilyName` fragment. CodeBrix.Platform stri
 
 ## Optical sizes
 
-Merriweather is published upstream in five optical sizes (24, 36, 48, 96 and 120 pt). The CodeBrix font-manifest schema addresses fonts by style, weight and stretch only and has no optical-size dimension, so a single optical size is shipped as static instances: **24pt**, chosen as the closest static to the variable font's own `opsz` default of 18. The bundled variable font retains the full optical-size axis.
+The CodeBrix font-manifest schema addresses fonts by style, weight and stretch only and has no optical-size dimension, so a single optical size is shipped as static instances: **24pt**, the closest available static to the variable font's own `opsz` default of 18. The bundled variable font retains the full optical-size axis.
+
+## Documentation
+
+The NuGet package includes `AGENT-README.txt`, a complete reference and usage guide written for AI coding agents - point your agent at that file when it is writing code or XAML against this package. It covers the full font inventory, the manifest format, weight/style/stretch selection and the script-coverage rules.
+
+Additional sample code and usage examples are available in the `CodeBrix.Platform.Fonts.Merriweather.Tests` project:
+https://github.com/ellisnet/CodeBrix.Platform.Fonts.Merriweather/tree/main/tests/CodeBrix.Platform.Fonts.Merriweather.Tests
 
 ## License
 
-The entire package — the library code, the `.targets` file, the packaging wrapper, and the bundled Merriweather and Noto Serif `.ttf` font files — is licensed under the SIL Open Font License, Version 1.1. see: https://en.wikipedia.org/wiki/SIL_Open_Font_License
+CodeBrix.Platform.Fonts.Merriweather is licensed under the SIL Open Font License, Version 1.1 - see the
+[LICENSE](https://github.com/ellisnet/CodeBrix.Platform.Fonts.Merriweather/blob/main/LICENSE) file. The licence
+covers the entire package: the library code, the `.targets` file, the packaging wrapper, and the bundled
+Merriweather and Noto Serif `.ttf` font files alike. The same text is bundled at the repository root and inside
+the produced NuGet package as `OFL.txt`, and the package is published under the SPDX expression `OFL-1.1`.
 
-The full license text is bundled with this repository as `OFL.txt` at the repository root and is also packaged inside the produced NuGet under the same name. The package is published under the SPDX expression `OFL-1.1`.
+Merriweather is distributed with the Reserved Font Name "Merriweather"; the bundled font files are redistributed
+bit-for-bit unmodified and their internal name tables are untouched.
 
-Merriweather is distributed with the Reserved Font Name "Merriweather"; the bundled font files are redistributed bit-for-bit unmodified and their internal name tables are untouched. See `THIRD-PARTY-NOTICES.txt` for the full attribution of all four bundled font families.
+For licensing and provenance information about the open source code included in
+this package, see [THIRD-PARTY-NOTICES.txt](https://github.com/ellisnet/CodeBrix.Platform.Fonts.Merriweather/blob/main/THIRD-PARTY-NOTICES.txt).
