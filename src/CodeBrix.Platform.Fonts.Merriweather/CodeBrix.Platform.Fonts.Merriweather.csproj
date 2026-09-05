@@ -56,14 +56,14 @@
     <Product>CodeBrix.Platform.Fonts.Merriweather</Product>
     <Title>CodeBrix.Platform.Fonts.Merriweather</Title>
     <Authors>Jeremy Ellis</Authors>
-    <Description>A .NET 10 redistribution of the Merriweather font family, packaged for the CodeBrix family. Ships the Merriweather variable font plus 24 static .ttf files (Light/Regular/Medium/SemiBold/Bold/ExtraBold weights in Normal/Italic styles across Normal/SemiCondensed stretches), and the Noto Serif, Noto Serif Armenian and Noto Serif Georgian companion fonts that extend coverage to the Greek, Armenian and Georgian scripts Merriweather itself does not carry. Includes a font .ttf.manifest JSON per family and a buildTransitive .targets file that prunes the unused static font set at consumer-build time. The whole package, code and fonts alike, is distributed under the SIL Open Font License 1.1.</Description>
+    <Description>The Merriweather serif font family, ready to use in your app with no separate download or install step. Includes the full range of weights and styles, plus companion fonts that extend character coverage to Greek, Armenian, and Georgian text. Only the styles your app actually uses are included, since unused ones are trimmed away automatically when you build.</Description>
     <PackageLicenseExpression>OFL-1.1</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/ellisnet/CodeBrix.Platform.Fonts.Merriweather</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ellisnet/CodeBrix.Platform.Fonts.Merriweather</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageIcon>icon-codebrix-128.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <Copyright>Copyright (c) 2026 Jeremy Ellis and contributors. Merriweather font (c) 2020 The Merriweather Project Authors; Noto Serif, Noto Serif Armenian and Noto Serif Georgian fonts (c) 2022 The Noto Project Authors; all distributed under SIL OFL 1.1.</Copyright>
+    <Copyright>Copyright (c) 2026 Jeremy Ellis and contributors</Copyright>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <IsPackable>true</IsPackable>
